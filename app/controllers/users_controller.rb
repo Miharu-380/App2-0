@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to book_path(@book.id)
     else
       @books = Book.all
-      render 'index'
+      render "index"
     end
   end
   
@@ -32,8 +32,12 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+    if current_user.update_without_password(user_params)
+      flash[:notice] = 'You have updated user successfully.'
+      redirect_to user_path(@user.id)
+    else
+      redirect_to user_path(@user.id)
+    end
   end
 
 

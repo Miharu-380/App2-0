@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          authentication_keys: [:name]
-         
-  validates_uniqueness_of :name
-  validates_presence_of :name
   
   has_many :books, dependent: :destroy
+  
+  validates_uniqueness_of :name
+  validates :name, presence: true
+  
   attachment :profile_image
 end
