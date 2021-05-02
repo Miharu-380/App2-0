@@ -7,8 +7,7 @@ class User < ApplicationRecord
   
   has_many :books, dependent: :destroy
   
-  validates_uniqueness_of :name
-  validates :name, presence: true
+  validates :title, :body, presence: true
   
   attachment :profile_image
 end
