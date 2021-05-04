@@ -11,15 +11,15 @@
     <tr></tr>
     <tr>
 	  <th>name</th>
-	  <th><div class="profile-name"><%= @user.name %></div></th>
+	  <th><%= @user.name %></th>
     </tr>
     <tr>
 	  <th>introduction</th>
-	  <th><div class="introduction"><%= @user.introduction %></th>
+	  <th><%= @user.introduction %></th>
     </tr>
   </tbody>
   </table>
-  
+  　　
   <div class="row">
   <% if @user.id == current_user.id %>
   <%= link_to edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block fas fa-user-cog" do %>
