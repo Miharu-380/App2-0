@@ -6,7 +6,7 @@
   <tbody><tr>
   <td>
     <%= link_to user_path(@user.id) do %>
-      <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "45x45"  %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "45x45"  %>
       <br/>
       <%= @user.name %>
     <% end %>
@@ -19,14 +19,14 @@
   <td>
     <%= @book0.body %>
   </td>
-  <% if user_signed_in? && current_user.id == @book0.user_id %>
+  <% if user_signed_in? && current_user.id == @user.id %>
   <td>
-    <%= link_to edit_book_path(@book0.user.id), class:"btn btn-sm btn-success" do %>
+    <%= link_to edit_book_path(@book0.id), class:"btn btn-sm btn-success" do %>
      Edit
     <% end %>
   </td>
   <td>
-    <%= link_to book_path(@book0.user.id), class:"btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" do %>
+    <%= link_to book_path(@book0.id), class:"btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" do %>
      Destroy
     <% end %>
   </td>

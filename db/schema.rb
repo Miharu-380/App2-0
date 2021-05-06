@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_04_30_064819) do
 
-  create_table "add_profile_image_id_to_users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "books", force: :cascade do |t|
     t.text "title"
     t.text "body"
