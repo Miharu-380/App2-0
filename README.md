@@ -1,24 +1,28 @@
-# README
+# Bookers1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+読んだ本のタイトルと感想を投稿するサイト　（DMMWEBCAMP課題）
 
-* Ruby version
+## ページ構成
 
-* System dependencies
+- Top
+- About
+- ログイン
+- 新規登録
+- 投稿一覧&投稿
+- 投稿詳細
+- 投稿編集
+- ユーザー一覧
+- ユーザー詳細
+- ユーザー編集
 
-* Configuration
+## 実装機能
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ログイン・ログアウト機能（devise）
+- 新規登録機能(devise)
+- （本のタイトルと感想の）投稿機能
+- 投稿閲覧機能
+- 投稿編集機能
+- 投稿削除機能（物理削除）
+- ユーザー編集機能
